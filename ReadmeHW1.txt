@@ -52,6 +52,8 @@ Task 1 - Object Interaction:
 - Yellow Block: Not grabbable. Plays a sound when hand/controller is nearby.
 - Purple Block: Not grabbable. Disappears when hand/controller is nearby.
 
+Couldnt get audio on demo video, it also recorded the wrong window during code review. 
+
 Task 2 - Gesture Recognition:
 - Supported gestures:
   - Thumbs Up: Displays "Right hand thumbs up!" or "Left hand thumbs up!"
@@ -69,8 +71,8 @@ YOUTUBE VIDEO LINKS
 
 Section 1 (XR Blocks) Demo: https://www.youtube.com/watch?v=K0tAYK0Lfak
 Section 1 (XR Hands) Demo: https://www.youtube.com/watch?v=oM5o1TPq0vI
-Section 2 (Meta Hands) Demo: [INSERT YOUTUBE LINK]
-Section 2 (Meta XR SDK) Demo: [INSERT YOUTUBE LINK]
+Section 2 (Meta blocks) Demo: https://youtu.be/SZratllJRFw
+Section 2 (Meta XR Hands) Demo: didn't complete
 
 ================================================================
 TASK ALLOCATION
