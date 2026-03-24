@@ -1,12 +1,6 @@
 using UnityEngine;
  
-/// <summary>
-/// Attach to the cube GameObject.
-/// Makes the cube fully invisible when a hand enters the proximity zone,
-/// and visible again when the hand leaves.
-///
-/// No material setup required — uses Renderer.enabled for a clean on/off toggle.
-/// </summary>
+
 public class HandProximityInvisible : MonoBehaviour
 {
     [Header("Hand Anchors")]
