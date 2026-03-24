@@ -57,6 +57,8 @@ Task 2 - Gesture Recognition:
   - Thumbs Up: Displays "Right hand thumbs up!" or "Left hand thumbs up!"
   - Fist: Displays "Right hand fist!" or "Left hand fist!"
   - Peace Sign: Displays "Right-hand Peace Sign!" or "Left-hand Peace Sign!"
+CHALLENGES
+   We were unable to complete the hand recognition using the meta XR SDK. This stemmed from a variety of problems, the first of which was being un aware of the setting required to be switch on the headset to make hands appear in our program. Once this challenge was mounted we found ourselves with extremely limited time to understand the intricicies of how the event handler's provided by the meta SDK work. The activitating of a script based on the chain of reactions within the trackers of untiy was hard to navigate and led to us beign unable to verify the hand shapes. Our abaility to display messages using the other SDK leaves us confident in our abilties going forward.
 
 ================================================================
 YOUTUBE VIDEO LINKS
