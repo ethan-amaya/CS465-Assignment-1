@@ -1,15 +1,6 @@
 using UnityEngine;
  
-/// <summary>
-/// Attach this script to the cube GameObject.
-/// Requires: Meta XR SDK and OVRCameraRig in the scene.
-/// In the Inspector, assign LeftHandAnchor and RightHandAnchor from
-/// OVRCameraRig > TrackingSpace > LeftHandAnchor / RightHandAnchor,
-/// and assign an AudioClip to ProximitySound.
-///
-/// An AudioSource is added automatically at runtime if one is not already
-/// present on the GameObject.
-/// </summary>
+
 [RequireComponent(typeof(AudioSource))]
 public class HandProximitySoundTrigger : MonoBehaviour
 {
