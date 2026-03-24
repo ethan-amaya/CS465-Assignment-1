@@ -61,8 +61,8 @@ Task 2 - Gesture Recognition:
 ================================================================
 YOUTUBE VIDEO LINKS
 
-Section 1 (XR Blocks) Demo: [INSERT YOUTUBE LINK]
-Section 1 (XR Hands) Demo: [INSERT YOUTUBE LINK]
+Section 1 (XR Blocks) Demo: https://www.youtube.com/watch?v=K0tAYK0Lfak
+Section 1 (XR Hands) Demo: https://www.youtube.com/watch?v=oM5o1TPq0vI
 Section 2 (Meta Hands) Demo: [INSERT YOUTUBE LINK]
 Section 2 (Meta XR SDK) Demo: [INSERT YOUTUBE LINK]
 
