@@ -21,41 +21,64 @@ public class GestureDetector : MonoBehaviour
 
     void Update()
     {
-        if (handSubsystem == null) return;
+        if (handSubsystem == null)
+        {
+            Debug.Log("Hand subsystem is NULL");
+            return;
+        }
 
         XRHand hand = isRightHand ? handSubsystem.rightHand : handSubsystem.leftHand;
         string side = isRightHand ? "Right" : "Left";
 
+        Debug.Log($"{side} hand tracked: {hand.isTracked}");
+
         if (!hand.isTracked) return;
 
         if (IsThumbsUp(hand))
+        {
             gestureUI.ShowMessage($"{side} hand thumbs up!");
+            Debug.Log($"{side} hand thumbs up detected!");
+        }
         else if (IsFist(hand))
+        {
             gestureUI.ShowMessage($"{side} hand fist!");
+            Debug.Log($"{side} hand fist detected!");
+        }
         else if (IsPeaceSign(hand))
+        {
             gestureUI.ShowMessage($"{side}-hand Peace Sign!");
+            Debug.Log($"{side} peace sign detected!");
+        }
         else
             gestureUI.ClearMessage();
     }
 
     bool IsThumbsUp(XRHand hand)
     {
-        // Thumb up, all other fingers curled
+        var thumbTip = hand.GetJoint(XRHandJointID.ThumbTip);
+        var thumbProx = hand.GetJoint(XRHandJointID.ThumbProximal);
+
+        if (!thumbTip.TryGetPose(out Pose tipPose) || !thumbProx.TryGetPose(out Pose proxPose))
+            return false;
+
+        // Thumb must be pointing upward
+        Vector3 thumbDir = tipPose.position - proxPose.position;
+        bool thumbPointingUp = thumbDir.y > 0.02f;
+
         return IsFingerCurled(hand, XRHandFingerID.Index) &&
-               IsFingerCurled(hand, XRHandFingerID.Middle) &&
-               IsFingerCurled(hand, XRHandFingerID.Ring) &&
-               IsFingerCurled(hand, XRHandFingerID.Little) &&
-               !IsFingerCurled(hand, XRHandFingerID.Thumb);
+            IsFingerCurled(hand, XRHandFingerID.Middle) &&
+            IsFingerCurled(hand, XRHandFingerID.Ring) &&
+            IsFingerCurled(hand, XRHandFingerID.Little) &&
+            thumbPointingUp;
     }
 
     bool IsFist(XRHand hand)
     {
-        // All fingers curled
-        return IsFingerCurled(hand, XRHandFingerID.Thumb) &&
-               IsFingerCurled(hand, XRHandFingerID.Index) &&
-               IsFingerCurled(hand, XRHandFingerID.Middle) &&
-               IsFingerCurled(hand, XRHandFingerID.Ring) &&
-               IsFingerCurled(hand, XRHandFingerID.Little);
+        return IsFingerCurled(hand, XRHandFingerID.Index) &&
+            IsFingerCurled(hand, XRHandFingerID.Middle) &&
+            IsFingerCurled(hand, XRHandFingerID.Ring) &&
+            IsFingerCurled(hand, XRHandFingerID.Little) &&
+            IsFingerCurled(hand, XRHandFingerID.Thumb);
     }
 
     bool IsPeaceSign(XRHand hand)
@@ -69,7 +92,6 @@ public class GestureDetector : MonoBehaviour
 
     bool IsFingerCurled(XRHand hand, XRHandFingerID fingerID)
     {
-        // Get tip and proximal joints to determine curl
         XRHandJointID tipID = GetTipJoint(fingerID);
         XRHandJointID proxID = GetProximalJoint(fingerID);
 
@@ -79,10 +101,7 @@ public class GestureDetector : MonoBehaviour
         if (!tipJoint.TryGetPose(out Pose tipPose) || !proxJoint.TryGetPose(out Pose proxPose))
             return false;
 
-        // For thumb, use a different threshold
-        float threshold = (fingerID == XRHandFingerID.Thumb) ? 0.04f : 0.06f;
-
-        // If tip is close to the palm (proximal), finger is curled
+        float threshold = (fingerID == XRHandFingerID.Thumb) ? 0.05f : 0.07f;
         float distance = Vector3.Distance(tipPose.position, proxPose.position);
         return distance < threshold;
     }

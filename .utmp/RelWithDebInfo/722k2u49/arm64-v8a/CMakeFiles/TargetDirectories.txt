@@ -1,0 +1,8 @@
+/Users/ethan.amaya/cs465-assignment-1/.utmp/RelWithDebInfo/722k2u49/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/ethan.amaya/cs465-assignment-1/.utmp/RelWithDebInfo/722k2u49/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/ethan.amaya/cs465-assignment-1/.utmp/RelWithDebInfo/722k2u49/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/Users/ethan.amaya/cs465-assignment-1/.utmp/RelWithDebInfo/722k2u49/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/ethan.amaya/cs465-assignment-1/.utmp/RelWithDebInfo/722k2u49/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+/Users/ethan.amaya/cs465-assignment-1/.utmp/RelWithDebInfo/722k2u49/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+/Users/ethan.amaya/cs465-assignment-1/.utmp/RelWithDebInfo/722k2u49/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+/Users/ethan.amaya/cs465-assignment-1/.utmp/RelWithDebInfo/722k2u49/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir
