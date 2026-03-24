@@ -2,12 +2,7 @@ using UnityEngine;
 using Oculus.Interaction;
 using Oculus.Interaction.Input;
  
-/// <summary>
-/// Attach this script to the cube GameObject.
-/// Requires: Meta XR SDK, a Rigidbody (optional), and OVRCameraRig in the scene.
-/// In the Inspector, assign LeftHandAnchor and RightHandAnchor from
-/// OVRCameraRig > TrackingSpace > LeftHandAnchor / RightHandAnchor.
-/// </summary>
+
 public class HandProximityColorChanger : MonoBehaviour
 {
     [Header("Hand Anchors")]
